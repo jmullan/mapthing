@@ -17,4 +17,12 @@ public class Point {
         double dy = Math.pow(y - other.y, 2);
         return Math.sqrt(dx + dy);
     }
+
+    int compareTo(Point other) {
+        double result = Math.signum(other.x - x);
+        if (result == 0) {
+            result = Math.signum(other.y - y);
+        }
+        return (int) result;
+    }
 }
